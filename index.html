@@ -174,20 +174,7 @@
 <li><p>每个节点与相邻节点均可分别放入两个不同集合，即为二分图。</p>
 </li>
 <li><p>思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。</p>
-</li>
-<li><p>递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。</p>
-</li>
-<li><p>这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而深度遍历主要还是递归的调用。</p>
-</li>
-<li><p>我最近刚开始刷LeetCode，慢慢来，坚持就是胜利！</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public boolean isBipartite(int[][] graph) &#123;</span><br><span class="line">	        int len = graph.length;</span><br><span class="line">	        int color[] = new int[len];  //4</span><br><span class="line">	        for(int i = 0;i&lt;len;i++)&#123;</span><br><span class="line">	            if(color[i]==0&amp;&amp;dfs(i,color,2,graph)==false) </span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">   </span><br><span class="line">	    public boolean dfs(int i,int []color,int t,int [][]graph)&#123;</span><br><span class="line">	        if(color[i]!=0)   //不为0即是遍历过的点</span><br><span class="line">	            return color[i]==t;</span><br><span class="line">	        color[i] = t;</span><br><span class="line">	        for(int j:graph[i])&#123;	//graph为二维数组</span><br><span class="line">	            if(dfs(j,color,3-t,graph)==false)</span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>文章部分内容来自 <a href="https://blog.csdn.net/qq_40879213/article/details/82700305" target="_blank" rel="noopener">我是一只小小小小鸡</a></p>
-</blockquote>
-
+        
       
 
       
@@ -340,7 +327,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -450,7 +437,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">大家好&lt;br&gt;&lt;br&gt;本人在校学生，本站用于记录学习&lt;br&gt;希望和大家一起交流学习&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">大家好&lt;br&gt;&lt;br&gt;本人在校学生，本站用于记录学习&lt;br&gt;希望和大家一起交流学习&lt;br&gt;</div>
   	  	
     	</section>
     

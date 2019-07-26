@@ -148,20 +148,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-First" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-LeetCode-785-深度搜索无向图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/First/">我的第一篇博客</a>
+      <a class="article-title" href="/2019/07/26/LeetCode-785-深度搜索无向图/">[LeetCode_785_深度搜索无向图]</a>
     </h1>
   
 
         
-        <a href="/2019/07/24/First/" class="archive-article-date">
-  	<time datetime="2019-07-24T03:19:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2019/07/26/LeetCode-785-深度搜索无向图/" class="archive-article-date">
+  	<time datetime="2019-07-26T15:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-26</time>
 </a>
         
 
@@ -170,7 +170,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="今天搭建了hexo博客"><a href="#今天搭建了hexo博客" class="headerlink" title="今天搭建了hexo博客"></a>今天搭建了hexo博客</h2><p>### </p>
+        <h2 id="判断二分图"><a href="#判断二分图" class="headerlink" title="判断二分图"></a>判断二分图</h2><ul>
+<li><p>每个节点与相邻节点均可分别放入两个不同集合，即为二分图。</p>
+</li>
+<li><p>思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。</p>
+</li>
+<li><p>递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。</p>
+</li>
+<li><p>这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而深度遍历主要还是递归的调用。</p>
+</li>
+<li><p>我最近刚开始刷LeetCode，慢慢来，坚持就是胜利！</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public boolean isBipartite(int[][] graph) &#123;</span><br><span class="line">	        int len = graph.length;</span><br><span class="line">	        int color[] = new int[len];  //4</span><br><span class="line">	        for(int i = 0;i&lt;len;i++)&#123;</span><br><span class="line">	            if(color[i]==0&amp;&amp;dfs(i,color,2,graph)==false) </span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">   </span><br><span class="line">	    public boolean dfs(int i,int []color,int t,int [][]graph)&#123;</span><br><span class="line">	        if(color[i]!=0)   //不为0即是遍历过的点</span><br><span class="line">	            return color[i]==t;</span><br><span class="line">	        color[i] = t;</span><br><span class="line">	        for(int j:graph[i])&#123;	//graph为二维数组</span><br><span class="line">	            if(dfs(j,color,3-t,graph)==false)</span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文章部分内容来自 <a href="https://blog.csdn.net/qq_40879213/article/details/82700305" target="_blank" rel="noopener">我是一只小小小小鸡</a></p>
+</blockquote>
 
       
 
@@ -179,11 +195,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/24/First/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/26/LeetCode-785-深度搜索无向图/">展开全文 >></a>
         </p>
       
 
@@ -215,20 +242,20 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-First" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/07/24/First/">我的第一篇博客</a>
     </h1>
   
 
         
-        <a href="/2019/07/24/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-24T03:09:15.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2019/07/24/First/" class="archive-article-date">
+  	<time datetime="2019-07-24T03:19:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
 </a>
         
 
@@ -237,20 +264,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h2 id="今天搭建了hexo博客"><a href="#今天搭建了hexo博客" class="headerlink" title="今天搭建了hexo博客"></a>今天搭建了hexo博客</h2>
       
 
       
@@ -262,7 +276,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/24/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/24/First/">展开全文 >></a>
         </p>
       
 
@@ -383,6 +397,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

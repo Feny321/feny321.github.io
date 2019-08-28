@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode_785_深度搜索无向图 | 且听风吟</title>
+  <title>LeetCode_395_至少有k个重复字符的最长子串 | 且听风吟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判断二分图 每个节点与相邻节点均可分别放入两个不同集合，即为二分图。  思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。  递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。  这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而">
+  <meta name="description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_785_深度搜索无向图">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/LeetCode-785-深度搜索无向图/index.html">
+<meta property="og:title" content="LeetCode_395_至少有k个重复字符的最长子串">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/LeetCode395/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="判断二分图 每个节点与相邻节点均可分别放入两个不同集合，即为二分图。  思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。  递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。  这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而">
+<meta property="og:description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-28T02:53:48.495Z">
+<meta property="og:updated_time" content="2019-08-28T02:53:58.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_785_深度搜索无向图">
-<meta name="twitter:description" content="判断二分图 每个节点与相邻节点均可分别放入两个不同集合，即为二分图。  思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。  递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。  这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而">
+<meta name="twitter:title" content="LeetCode_395_至少有k个重复字符的最长子串">
+<meta name="twitter:description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
   
     <link rel="alternative" href="/atom.xml" title="且听风吟" type="application/atom+xml">
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode-785-深度搜索无向图" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode395" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode_785_深度搜索无向图
+      LeetCode_395_至少有k个重复字符的最长子串
     </h1>
   
 
         
-        <a href="/2019/07/26/LeetCode-785-深度搜索无向图/" class="archive-article-date">
-  	<time datetime="2019-07-26T15:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-26</time>
+        <a href="/2019/08/28/LeetCode395/" class="archive-article-date">
+  	<time datetime="2019-08-28T02:15:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
 </a>
         
 
@@ -173,23 +173,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="判断二分图"><a href="#判断二分图" class="headerlink" title="判断二分图"></a>判断二分图</h2><ul>
-<li><p>每个节点与相邻节点均可分别放入两个不同集合，即为二分图。</p>
-</li>
-<li><p>思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。</p>
-</li>
-<li><p>递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。</p>
-</li>
-<li><p>这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而深度遍历主要还是递归的调用。</p>
-<a id="more"></a>    </li>
-<li><p>我最近刚开始刷LeetCode，慢慢来，坚持就是胜利！</p>
+        <ul>
+<li>分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。<ul>
+<li>分治法的精髓：<ul>
+<li>分–将问题分解为规模更小的子问题；</li>
+<li>治–将这些规模更小的子问题逐个击破；</li>
+<li>合–将已解决的子问题合并，最终得出“母”问题的解；</li>
+</ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public boolean isBipartite(int[][] graph) &#123;</span><br><span class="line">	        int len = graph.length;</span><br><span class="line">	        int color[] = new int[len];  //4</span><br><span class="line">	        for(int i = 0;i&lt;len;i++)&#123;</span><br><span class="line">	            if(color[i]==0&amp;&amp;dfs(i,color,2,graph)==false) </span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">   </span><br><span class="line">	    public boolean dfs(int i,int []color,int t,int [][]graph)&#123;</span><br><span class="line">	        if(color[i]!=0)   //不为0即是遍历过的点</span><br><span class="line">	            return color[i]==t;</span><br><span class="line">	        color[i] = t;</span><br><span class="line">	        for(int j:graph[i])&#123;	//graph为二维数组</span><br><span class="line">	            if(dfs(j,color,3-t,graph)==false)</span><br><span class="line">	                return false;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return true;</span><br><span class="line">	    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字符串，记录每个字母出现的次数，遍历数组，找出大于0小于k的字母，以此为分界线，将字符串分成前后两个子串，重复上述过程<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public int longestSubstring(String s, int k) &#123;</span><br><span class="line">	    return longestSubstringSub(s, k, 0, s.length() - 1);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">	private int longestSubstringSub(String s, int k, int start, int end)&#123;</span><br><span class="line">	    if(start &gt; end) return 0;</span><br><span class="line">	    int[] count = new int[26];</span><br><span class="line">	    for(int i = start; i &lt;= end; i++)&#123;</span><br><span class="line">	        count[s.charAt(i) - &apos;a&apos;]++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    for(int i = 0; i &lt; 26; i++)&#123;</span><br><span class="line">	        if(count[i] &gt; 0 &amp;&amp; count[i] &lt; k)&#123;</span><br><span class="line">	            int pos = s.indexOf((char)(i + &apos;a&apos;), start);</span><br><span class="line">	            return Math.max(longestSubstringSub(s, k, start, pos - 1), longestSubstringSub(s, k, pos + 1, end));</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    return end - start + 1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<a id="more"></a>    
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def longestSubstring(self, s, k):</span><br><span class="line">        if len(s) &lt; k:</span><br><span class="line">            return 0</span><br><span class="line">        for c in set(s):</span><br><span class="line">            if s.count(c) &lt; k:</span><br><span class="line">                return max(self.longestSubstring(t, k) for t in s.split(c))</span><br><span class="line">        return len(s)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Python count() 方法用于统计字符串里某个字符出现的次数。可选参数为在字符串搜索的开始与结束位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">count()方法语法：</span><br><span class="line">str.count(sub, start= 0,end=len(string))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python相比较Java的代码更简单，更适合做算法题</p>
 <blockquote>
-<p>文章部分内容来自 <a href="https://blog.csdn.net/qq_40879213/article/details/82700305" target="_blank" rel="noopener">我是一只小小小小鸡</a></p>
+<p>代码来源：<br><a href="https://blog.csdn.net/u010900754/article/details/62159601" target="_blank" rel="noopener">https://blog.csdn.net/u010900754/article/details/62159601</a><br><a href="https://blog.csdn.net/fuxuemingzhu/article/details/82889933" target="_blank" rel="noopener">https://blog.csdn.net/fuxuemingzhu/article/details/82889933</a></p>
 </blockquote>
+</li>
+</ul>
 
       
 
@@ -282,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/26/LeetCode-785-深度搜索无向图/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/28/LeetCode395/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +307,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/24/LeetCode350/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode_350_两个数组的交集2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/24/First/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一篇博客</div>
+    <a href="/2019/08/26/LeetCode-881/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode_881_子域名访问计数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -335,7 +337,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode-785-深度搜索无向图" data-title="LeetCode_785_深度搜索无向图" data-url="http://yoursite.com/2019/07/26/LeetCode-785-深度搜索无向图/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode395" data-title="LeetCode_395_至少有k个重复字符的最长子串" data-url="http://yoursite.com/2019/08/28/LeetCode395/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

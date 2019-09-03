@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode_395_至少有k个重复字符的最长子串 | 且听风吟</title>
+  <title>LintCode_92_背包问题 | 且听风吟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。  样例 1:输入:  [3,4,8,5], backpack size=10输出:  9  样例 2:输入:  [2,3,5,7], backpack size=12输出:  12    两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前">
+<meta name="keywords" content="LintCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_395_至少有k个重复字符的最长子串">
-<meta property="og:url" content="http://yoursite.com/2019/08/28/LeetCode395/index.html">
+<meta property="og:title" content="LintCode_92_背包问题">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/LintCode-92/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
+<meta property="og:description" content="描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。  样例 1:输入:  [3,4,8,5], backpack size=10输出:  9  样例 2:输入:  [2,3,5,7], backpack size=12输出:  12    两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-28T02:53:58.363Z">
+<meta property="og:updated_time" content="2019-09-03T13:53:18.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_395_至少有k个重复字符的最长子串">
-<meta name="twitter:description" content="分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。 分治法的精髓： 分–将问题分解为规模更小的子问题； 治–将这些规模更小的子问题逐个击破； 合–将已解决的子问题合并，最终得出“母”问题的解；     思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字">
+<meta name="twitter:title" content="LintCode_92_背包问题">
+<meta name="twitter:description" content="描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。  样例 1:输入:  [3,4,8,5], backpack size=10输出:  9  样例 2:输入:  [2,3,5,7], backpack size=12输出:  12    两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前">
   
     <link rel="alternative" href="/atom.xml" title="且听风吟" type="application/atom+xml">
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode395" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LintCode-92" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode_395_至少有k个重复字符的最长子串
+      LintCode_92_背包问题
     </h1>
   
 
         
-        <a href="/2019/08/28/LeetCode395/" class="archive-article-date">
-  	<time datetime="2019-08-28T02:15:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+        <a href="/2019/09/03/LintCode-92/" class="archive-article-date">
+  	<time datetime="2019-09-03T13:32:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
 </a>
         
 
@@ -174,33 +174,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>分治法(Baidu)：分治法可以通俗的解释为：把一片领土分解，分解为若干块小部分，然后一块块地占领征服，被分解的可以是不同的政治派别或是其他什么，然后让他们彼此异化。<ul>
-<li>分治法的精髓：<ul>
-<li>分–将问题分解为规模更小的子问题；</li>
-<li>治–将这些规模更小的子问题逐个击破；</li>
-<li>合–将已解决的子问题合并，最终得出“母”问题的解；</li>
-</ul>
+<li><p>描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。</p>
+<ol>
+<li><p>样例 1:<br>输入:  [3,4,8,5], backpack size=10<br>输出:  9</p>
+</li>
+<li><p>样例 2:<br>输入:  [2,3,5,7], backpack size=12<br>输出:  12</p>
+</li>
+</ol>
+</li>
+<li><p>两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前物品所占的空间，剩余空间的最大值加上当前物品的重量，与不加当前物品相比较，最大的就存在二维数组；当前物品大于当前的容量，说明该物品不能放进去，那最大值仍是不加该物品时的最大值，这样就能保证，每次存的都是最优结果，直到最后一个值，就是最优结果。</p>
 </li>
 </ul>
-</li>
-<li>思路：定义一个26大小的数组，0-a,1-b……每个位置分别对应一个字母，遍历字符串，记录每个字母出现的次数，遍历数组，找出大于0小于k的字母，以此为分界线，将字符串分成前后两个子串，重复上述过程<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public int longestSubstring(String s, int k) &#123;</span><br><span class="line">	    return longestSubstringSub(s, k, 0, s.length() - 1);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">	private int longestSubstringSub(String s, int k, int start, int end)&#123;</span><br><span class="line">	    if(start &gt; end) return 0;</span><br><span class="line">	    int[] count = new int[26];</span><br><span class="line">	    for(int i = start; i &lt;= end; i++)&#123;</span><br><span class="line">	        count[s.charAt(i) - &apos;a&apos;]++;</span><br><span class="line">	    &#125;</span><br><span class="line">	    for(int i = 0; i &lt; 26; i++)&#123;</span><br><span class="line">	        if(count[i] &gt; 0 &amp;&amp; count[i] &lt; k)&#123;</span><br><span class="line">	            int pos = s.indexOf((char)(i + &apos;a&apos;), start);</span><br><span class="line">	            return Math.max(longestSubstringSub(s, k, start, pos - 1), longestSubstringSub(s, k, pos + 1, end));</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    return end - start + 1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @param m: An integer m denotes the size of a backpack</span><br><span class="line">     * @param A: Given n items with size A[i]</span><br><span class="line">     * @return: The maximum size</span><br><span class="line">     */</span><br><span class="line">   public int backPack(int m, int[] A) &#123;</span><br><span class="line">        if (m == 0 || A.length == 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int length = A.length;</span><br><span class="line">        int[][] array = new int[length + 1][m + 1];</span><br><span class="line">        for (int i = 1; i &lt;= length; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">                if (A[i - 1] &lt;= j) &#123;</span><br><span class="line">                    array[i][j] = Integer.max(array[i - 1][j - A[i - 1]] + A[i - 1], array[i - 1][j]);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    array[i][j] = array[i - 1][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return array[length][m];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<a id="more"></a>    
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def longestSubstring(self, s, k):</span><br><span class="line">        if len(s) &lt; k:</span><br><span class="line">            return 0</span><br><span class="line">        for c in set(s):</span><br><span class="line">            if s.count(c) &lt; k:</span><br><span class="line">                return max(self.longestSubstring(t, k) for t in s.split(c))</span><br><span class="line">        return len(s)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Python count() 方法用于统计字符串里某个字符出现的次数。可选参数为在字符串搜索的开始与结束位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">count()方法语法：</span><br><span class="line">str.count(sub, start= 0,end=len(string))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>python相比较Java的代码更简单，更适合做算法题</p>
-<blockquote>
-<p>代码来源：<br><a href="https://blog.csdn.net/u010900754/article/details/62159601" target="_blank" rel="noopener">https://blog.csdn.net/u010900754/article/details/62159601</a><br><a href="https://blog.csdn.net/fuxuemingzhu/article/details/82889933" target="_blank" rel="noopener">https://blog.csdn.net/fuxuemingzhu/article/details/82889933</a></p>
-</blockquote>
-</li>
-</ul>
 
       
 
@@ -237,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
         		</li>
       		
 		</ul>
@@ -293,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/28/LeetCode395/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/03/LintCode-92/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/30/LeetCode-394/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode_394_字符串解码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/26/LeetCode-881/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode_881_子域名访问计数</div>
+    <a href="/2019/09/02/393/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode_393_判断子序列</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -346,7 +323,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode395" data-title="LeetCode_395_至少有k个重复字符的最长子串" data-url="http://yoursite.com/2019/08/28/LeetCode395/"></div>
+	<div class="ds-thread" data-thread-key="LintCode-92" data-title="LintCode_92_背包问题" data-url="http://yoursite.com/2019/09/03/LintCode-92/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

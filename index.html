@@ -148,6 +148,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LintCode-125" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/04/LintCode-125/">LintCode_125_背包问题2</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/04/LintCode-125/" class="archive-article-date">
+  	<time datetime="2019-09-03T23:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+</a>
+        
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>有 n 个物品和一个大小为 m 的背包. 给定数组 A 表示每个物品的大小和数组 V 表示每个物品的价值.问最多能装入背包的总价值是多大?<ol>
+<li>A[i], V[i], n, m 均为整数<br>你不能将物品进行切分<br>你所挑选的要装入背包的物品的总大小不能超过 m<br>每个物品只能取一次 </li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>样例 1:<br>输入: m = 10, A = [2, 3, 5, 7], V = [1, 5, 2, 4]<br>输出: 9<br>解释: 装入 A[1] 和 A[3] 可以得到最大价值, V[1] + V[3] = 9 </p>
+</blockquote>
+<blockquote>
+<p>样例 2:<br>输入: m = 10, A = [2, 3, 8], V = [2, 5, 8]<br>输出: 10<br>解释: 装入 A[0] 和 A[2] 可以得到最大价值, V[0] + V[2] = 10</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">   public int backPack(int m, int[] A) &#123;</span><br><span class="line">        if (m == 0 || A.length == 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int length = A.length;</span><br><span class="line">        int[][] array = new int[length + 1][m + 1];</span><br><span class="line">        for (int i = 1; i &lt;= length; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">                if (A[i - 1] &lt;= j) &#123;</span><br><span class="line">                    array[i][j] = Integer.max(array[i - 1][j - A[i - 1]] + V[i - 1], array[i - 1][j]);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    array[i][j] = array[i - 1][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return array[length][m];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这道题和上道题的思路是一样的，都是动态规划算法，就是最大的重量换成最大价值。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/04/LintCode-125/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-LintCode-92" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -171,16 +265,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。</p>
-<ol>
-<li><p>样例 1:<br>输入:  [3,4,8,5], backpack size=10<br>输出:  9</p>
-</li>
-<li><p>样例 2:<br>输入:  [2,3,5,7], backpack size=12<br>输出:  12</p>
-</li>
-</ol>
-</li>
-<li><p>两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前物品所占的空间，剩余空间的最大值加上当前物品的重量，与不加当前物品相比较，最大的就存在二维数组；当前物品大于当前的容量，说明该物品不能放进去，那最大值仍是不加该物品时的最大值，这样就能保证，每次存的都是最优结果，直到最后一个值，就是最优结果。</p>
-</li>
+<li>描述：在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]。</li>
+</ul>
+<blockquote>
+<p>样例 1:<br>输入:  [3,4,8,5], backpack size=10<br>输出:  9</p>
+</blockquote>
+<blockquote>
+<p>样例 2:<br>输入:  [2,3,5,7], backpack size=12<br>输出:  12</p>
+</blockquote>
+<ul>
+<li>两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前物品所占的空间，剩余空间的最大值加上当前物品的重量，与不加当前物品相比较，最大的就存在二维数组；当前物品大于当前的容量，说明该物品不能放进去，那最大值仍是不加该物品时的最大值，这样就能保证，每次存的都是最优结果，直到最后一个值，就是最优结果。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @param m: An integer m denotes the size of a backpack</span><br><span class="line">     * @param A: Given n items with size A[i]</span><br><span class="line">     * @return: The maximum size</span><br><span class="line">     */</span><br><span class="line">   public int backPack(int m, int[] A) &#123;</span><br><span class="line">        if (m == 0 || A.length == 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int length = A.length;</span><br><span class="line">        int[][] array = new int[length + 1][m + 1];</span><br><span class="line">        for (int i = 1; i &lt;= length; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">                if (A[i - 1] &lt;= j) &#123;</span><br><span class="line">                    array[i][j] = Integer.max(array[i - 1][j - A[i - 1]] + A[i - 1], array[i - 1][j]);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    array[i][j] = array[i - 1][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return array[length][m];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

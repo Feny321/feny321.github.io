@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: LintCode | 且听风吟</title>
+  <title>LintCode_440_背包问题3 | 且听风吟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="且听风吟">
-<meta property="og:url" content="http://yoursite.com/tags/LintCode/index.html">
+  <meta name="description" content="给定n种具有大小 Ai 和价值 Vi 的物品(每个物品可以取用无限次)和一个大小为 m 的一个背包, 你可以放入背包里的最大价值是多少?   样例给出四个物品, 大小为 [2, 3, 5, 7], 价值为 [1, 5, 2, 4], 和一个大小为 10 的背包. 最大的价值为 15.   注意事项你不能将物品分成小块, 选择的项目的总大小应 小于或等于 m   首先我们想到的是用贪心算法，将单位">
+<meta name="keywords" content="LintCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LintCode_440_背包问题3">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/LintCode-440/index.html">
 <meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="给定n种具有大小 Ai 和价值 Vi 的物品(每个物品可以取用无限次)和一个大小为 m 的一个背包, 你可以放入背包里的最大价值是多少?   样例给出四个物品, 大小为 [2, 3, 5, 7], 价值为 [1, 5, 2, 4], 和一个大小为 10 的背包. 最大的价值为 15.   注意事项你不能将物品分成小块, 选择的项目的总大小应 小于或等于 m   首先我们想到的是用贪心算法，将单位">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-05T11:12:32.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="且听风吟">
+<meta name="twitter:title" content="LintCode_440_背包问题3">
+<meta name="twitter:description" content="给定n种具有大小 Ai 和价值 Vi 的物品(每个物品可以取用无限次)和一个大小为 m 的一个背包, 你可以放入背包里的最大价值是多少?   样例给出四个物品, 大小为 [2, 3, 5, 7], 价值为 [1, 5, 2, 4], 和一个大小为 10 的背包. 最大的价值为 15.   注意事项你不能将物品分成小块, 选择的项目的总大小应 小于或等于 m   首先我们想到的是用贪心算法，将单位">
   
     <link rel="alternative" href="/atom.xml" title="且听风吟" type="application/atom+xml">
   
@@ -146,36 +151,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-LintCode-440" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      LintCode_440_背包问题3
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/05/LintCode-440/" class="archive-article-date">
+
+        
+        <a href="/2019/09/05/LintCode-440/" class="archive-article-date">
   	<time datetime="2019-09-05T11:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/05/LintCode-440/">LintCode_440_背包问题3</a>
-    </h1>
-  
+        
 
-        <div class="article-info info-on-right">
-          
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>给定n种具有大小 Ai 和价值 Vi 的物品(每个物品可以取用无限次)和一个大小为 m 的一个背包, 你可以放入背包里的最大价值是多少?</li>
+</ul>
+<blockquote>
+<p>样例<br>给出四个物品, 大小为 [2, 3, 5, 7], 价值为 [1, 5, 2, 4], 和一个大小为 10 的背包. 最大的价值为 15.</p>
+</blockquote>
+<blockquote>
+<p>注意事项<br>你不能将物品分成小块, 选择的项目的总大小应 小于或等于 m</p>
+</blockquote>
+<ul>
+<li><p>首先我们想到的是用贪心算法，将单位体积价值最大的物品优先放入背包，但是物品是以件为单位，不能拆分，往往只靠性价比最高的是装不满背包的，那么就用性价比第二高的物品继续添加进背包，看起来似乎可行，但我举一个例子。</p>
+<a id="more"></a></li>
+<li><p>比如只有两个物品：物品A：价值5，体积5，物品B：价值8：体积7，背包容量为10，物品B的性价比显然要比物品A高，那么用贪心算法必然会选择放入一个物品B，此时，剩余的空间已无法装下A或者B，所以得到的最高价值为8，而实际上，选择放入两个物品A即可得到更高的价值10。所以这里贪心算法并不适用。</p>
+</li>
+<li><p>所以这道题仍是用动态规划算法解决，在前两道题的基础上，主要的不同点就是每件东西可以重复放入，直到实现最大价值。那么我们就可以在这件物品可以放进背包的基础上，再次判断这件物品可不可以重复放进背包内，并且判断价值是不是最大。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		int m = 10;</span><br><span class="line">		int[] w = new int[]&#123;2,3,5,7&#125;;</span><br><span class="line">		int[] v = new int[] &#123;1,5,2,4&#125;;</span><br><span class="line">		int length = w.length;</span><br><span class="line">		int[][] a = new int[length+1][m+1];</span><br><span class="line">		for(int i=1;i&lt;=w.length;i++) &#123;</span><br><span class="line">			for(int j=w[i-1];j&lt;=m;j++) &#123;</span><br><span class="line">				if(w[i-1]&lt;=j) &#123;</span><br><span class="line">					for(int k=0;k*w[i-1]&lt;=j;k++) &#123;</span><br><span class="line">						a[i][j] = Math.max(a[i-1][j-k*w[i-1]]+k*v[i-1], a[i-1][j]);</span><br><span class="line">					&#125;</span><br><span class="line">					&#125;else &#123;</span><br><span class="line">						a[i][j]= a[i-1][j];</span><br><span class="line">					&#125;</span><br><span class="line">				System.out.print(a[i][j]+&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println( a[length][m]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优化后</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">		int m = 10;</span><br><span class="line">		int[] w = new int[]&#123;2,3,5,7&#125;;</span><br><span class="line">		int[] v = new int[] &#123;1,5,2,4&#125;;</span><br><span class="line">		int length = w.length;</span><br><span class="line">		int[][] a = new int[length+1][m+1];</span><br><span class="line">		for(int i=1;i&lt;=w.length;i++) &#123;</span><br><span class="line">			for(int j=w[i-1];j&lt;=m;j++) &#123;</span><br><span class="line">				if(w[i-1]&lt;=j) &#123;</span><br><span class="line">					int k = j/w[i-1];</span><br><span class="line">					if(k&gt;=2) &#123;</span><br><span class="line">						a[i][j] = Math.max(a[i-1][j-k*w[i-1]]+k*v[i-1], a[i-1][j]);</span><br><span class="line">					&#125;else &#123;</span><br><span class="line">						a[i][j] = Math.max(a[i-1][j-w[i-1]]+v[i-1], a[i-1][j]);</span><br><span class="line">					&#125;</span><br><span class="line">					&#125;else &#123;</span><br><span class="line">						a[i][j]= a[i-1][j];</span><br><span class="line">					&#125;</span><br><span class="line">				System.out.print(a[i][j]+&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println( a[length][m]);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://www.imooc.com/article/286140" target="_blank" rel="noopener">参考的这篇文章，写的很详细！http://www.imooc.com/article/286140</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+
+
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,95 +240,128 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/05/LintCode-440/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/04/LintCode-125/" class="archive-article-date">
-  	<time datetime="2019-09-03T23:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/04/LintCode-125/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LintCode_125_背包问题2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/04/LintCode-125/">LintCode_125_背包问题2</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="LintCode-440" data-title="LintCode_440_背包问题3" data-url="http://yoursite.com/2019/09/05/LintCode-440/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/03/LintCode-92/" class="archive-article-date">
-  	<time datetime="2019-09-03T13:32:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/03/LintCode-92/">LintCode_92_背包问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+
 
 
           </div>
@@ -310,9 +396,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

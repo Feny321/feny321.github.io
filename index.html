@@ -179,13 +179,7 @@
 <blockquote>
 <p>样例 2:<br>输入: [1, 2, 4]<br>输出: false<br>解释: 无论先手拿一个还是两个, 后手可以拿完, 然后总价值更高.</p>
 </blockquote>
-<ul>
-<li><p>解题思路：从后往前拿，拿倒数第一个，先手拿走，后手没有，倒数两个，先手拿两个，后手没有，拿倒数第三个，先手可以拿一个，可以拿两个，所以有两种情况，取最大，用先手的值减后手的值，大于0则先手大于后手，先手赢，否则后手赢。用公式表示：dp=Va-Vb,dp&gt;=0,a赢,dp&lt;0,b赢。</p>
-</li>
-<li><p>举个例子：7,1,2,4<br>dp[3] = 4<br>dp[2] = 6<br>dp[1] = 3-4=-1 //三是先手拿的最大值，此时先手小于后手<br>dp[0] = max{（7-（3-4）），（8-6））}<br>// 前者大，情况是先手拿一个7和4，大于后手1和2，这是最优结果，如果这个数组是五个数，那么在下一步就会用上这个最优结果，所以每一次dp存的都是Va-Vb的最优结果，下一步a的最优方案就是b的最优方案，保证每一次都是拿的最大值，直到最后一个，判断dp是否大于0。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @param values: a vector of integers</span><br><span class="line">     * @return: a boolean which equals to true if the first player will win</span><br><span class="line">     */</span><br><span class="line">    public boolean firstWillWin(int[] values) &#123;</span><br><span class="line">        // write your code here</span><br><span class="line">         if (values == null || values.length == 0) return false;</span><br><span class="line">	        </span><br><span class="line">	        int[] dp = new int[values.length];</span><br><span class="line">	        for (int i = values.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">	            if (i == values.length - 1) &#123;</span><br><span class="line">	                dp[i] = values[i];</span><br><span class="line">	            &#125; else if (i == values.length - 2) &#123;</span><br><span class="line">	                dp[i] = values[i] + values[i + 1];</span><br><span class="line">	            &#125; else &#123;</span><br><span class="line">	                dp[i] = Math.max(values[i] - dp[i + 1], values[i] + values[i + 1] - dp[i + 2]);</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return dp[0] &gt;= 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+        
       
 
       
@@ -199,6 +193,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -287,6 +285,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -382,6 +384,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -467,6 +473,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -1139,6 +1149,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
             
             <div class="clearfix"></div>

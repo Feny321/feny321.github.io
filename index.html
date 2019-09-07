@@ -148,6 +148,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LintCode-395" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/LintCode-395/">LintCode_395</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/07/LintCode-395/" class="archive-article-date">
+  	<time datetime="2019-09-07T08:37:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+</a>
+        
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>题目：有 n 个不同价值的硬币排成一条线。两个参赛者轮流从左边依次拿走 1 或 2 个硬币，直到没有硬币为止。计算两个人分别拿到的硬币总价值，价值高的人获胜。请判定先手玩家 必胜还是必败?<br>若必胜, 返回 true, 否则返回 false.</li>
+</ul>
+<blockquote>
+<p>样例 1:<br>输入: [1, 2, 2]<br>输出: true<br>解释: 先手玩家直接拿走两颗硬币即可.</p>
+</blockquote>
+<blockquote>
+<p>样例 2:<br>输入: [1, 2, 4]<br>输出: false<br>解释: 无论先手拿一个还是两个, 后手可以拿完, 然后总价值更高.</p>
+</blockquote>
+<ul>
+<li><p>解题思路：从后往前拿，拿倒数第一个，先手拿走，后手没有，倒数两个，先手拿两个，后手没有，拿倒数第三个，先手可以拿一个，可以拿两个，所以有两种情况，取最大，用先手的值减后手的值，大于0则先手大于后手，先手赢，否则后手赢。用公式表示：dp=Va-Vb,dp&gt;=0,a赢,dp&lt;0,b赢。</p>
+</li>
+<li><p>举个例子：7,1,2,4<br>dp[3] = 4<br>dp[2] = 6<br>dp[1] = 3-4=-1 //三是先手拿的最大值，此时先手小于后手<br>dp[0] = max{（7-（3-4）），（8-6））}<br>// 前者大，情况是先手拿一个7和4，大于后手1和2，这是最优结果，如果这个数组是五个数，那么在下一步就会用上这个最优结果，所以每一次dp存的都是Va-Vb的最优结果，下一步a的最优方案就是b的最优方案，保证每一次都是拿的最大值，直到最后一个，判断dp是否大于0。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @param values: a vector of integers</span><br><span class="line">     * @return: a boolean which equals to true if the first player will win</span><br><span class="line">     */</span><br><span class="line">    public boolean firstWillWin(int[] values) &#123;</span><br><span class="line">        // write your code here</span><br><span class="line">         if (values == null || values.length == 0) return false;</span><br><span class="line">	        </span><br><span class="line">	        int[] dp = new int[values.length];</span><br><span class="line">	        for (int i = values.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">	            if (i == values.length - 1) &#123;</span><br><span class="line">	                dp[i] = values[i];</span><br><span class="line">	            &#125; else if (i == values.length - 2) &#123;</span><br><span class="line">	                dp[i] = values[i] + values[i + 1];</span><br><span class="line">	            &#125; else &#123;</span><br><span class="line">	                dp[i] = Math.max(values[i] - dp[i + 1], values[i] + values[i + 1] - dp[i + 2]);</span><br><span class="line">	            &#125;</span><br><span class="line">	        &#125;</span><br><span class="line">	        return dp[0] &gt;= 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LintCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/07/LintCode-395/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-LintCode-440" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -910,91 +1002,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/24/LeetCode350/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-LeetCode-785-深度搜索无向图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/26/LeetCode-785-深度搜索无向图/">LeetCode_785_深度搜索无向图</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/26/LeetCode-785-深度搜索无向图/" class="archive-article-date">
-  	<time datetime="2019-07-26T15:48:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-26</time>
-</a>
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="判断二分图"><a href="#判断二分图" class="headerlink" title="判断二分图"></a>判断二分图</h2><ul>
-<li><p>每个节点与相邻节点均可分别放入两个不同集合，即为二分图。</p>
-</li>
-<li><p>思路：DFS，染色法，首先将所有节点复制为0，存放color数组，没遍历过的点赋值2，相邻节点赋值为1，如果每个节点与相邻的节点的值均不相等，分成的两个集合不相交，则是二分图。</p>
-</li>
-<li><p>递归的过程就详细描述了，过程有点复杂，大家可以慢慢debug ，看详细过程。</p>
-</li>
-<li><p>这个题刚看上去感觉有点难，但要是理解了深度遍历的过程，就好理解了，而深度遍历主要还是递归的调用。</p></li></ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/26/LeetCode-785-深度搜索无向图/">展开全文 >></a>
         </p>
       
 

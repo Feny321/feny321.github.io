@@ -155,7 +155,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/07/LintCode-395/">LintCode_395</a>
+      <a class="article-title" href="/2019/09/07/LintCode-395/">LintCode_395_硬币排成线2</a>
     </h1>
   
 
@@ -453,12 +453,7 @@
 <blockquote>
 <p>样例 2:<br>输入:  [2,3,5,7], backpack size=12<br>输出:  12</p>
 </blockquote>
-<ul>
-<li>两个判断条件，第一个，判断当前物品小于等于当前的容量，这说明当前物品可以放进背包，接下来比较第二次，去掉当前物品所占的空间，剩余空间的最大值加上当前物品的重量，与不加当前物品相比较，最大的就存在二维数组；当前物品大于当前的容量，说明该物品不能放进去，那最大值仍是不加该物品时的最大值，这样就能保证，每次存的都是最优结果，直到最后一个值，就是最优结果。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * @param m: An integer m denotes the size of a backpack</span><br><span class="line">     * @param A: Given n items with size A[i]</span><br><span class="line">     * @return: The maximum size</span><br><span class="line">     */</span><br><span class="line">   public int backPack(int m, int[] A) &#123;</span><br><span class="line">        if (m == 0 || A.length == 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int length = A.length;</span><br><span class="line">        int[][] array = new int[length + 1][m + 1];</span><br><span class="line">        for (int i = 1; i &lt;= length; i++) &#123;</span><br><span class="line">            for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">                if (A[i - 1] &lt;= j) &#123;</span><br><span class="line">                    array[i][j] = Integer.max(array[i - 1][j - A[i - 1]] + A[i - 1], array[i - 1][j]);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    array[i][j] = array[i - 1][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return array[length][m];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        
       
 
       

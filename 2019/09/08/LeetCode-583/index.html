@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode_881_子域名访问计数 | 且听风吟</title>
+  <title>LeetCode_583_两个字符串的删除操作 | 且听风吟</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这次的题目还是用的哈希表，边做题边练习python  主要用到的方法：  split()切割字符串  join()指定字符连接序列中的元素生成新的字符串 1234str = &amp;quot;-&amp;quot;;seq = (&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;)print str.join( seq )结果：a-b-c  format()格式化字符串 1">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="描述 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。  示例 1: 输入: “sea”, “eat”输出: 2解释: 第一步将”sea”变为”ea”，第二步将”eat”变为”ea”   思路：dp数组存的是两个字符串有最大相同子串的字符个数，如果有字符相同，dp就加1，没有则比较上一步的最大值，结果值用两">
+<meta name="keywords" content="LeetCode,动态规划">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode_881_子域名访问计数">
-<meta property="og:url" content="http://yoursite.com/2019/08/26/LeetCode-881/index.html">
+<meta property="og:title" content="LeetCode_583_两个字符串的删除操作">
+<meta property="og:url" content="http://yoursite.com/2019/09/08/LeetCode-583/index.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="这次的题目还是用的哈希表，边做题边练习python  主要用到的方法：  split()切割字符串  join()指定字符连接序列中的元素生成新的字符串 1234str = &amp;quot;-&amp;quot;;seq = (&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;)print str.join( seq )结果：a-b-c  format()格式化字符串 1">
+<meta property="og:description" content="描述 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。  示例 1: 输入: “sea”, “eat”输出: 2解释: 第一步将”sea”变为”ea”，第二步将”eat”变为”ea”   思路：dp数组存的是两个字符串有最大相同子串的字符个数，如果有字符相同，dp就加1，没有则比较上一步的最大值，结果值用两">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-28T02:53:45.047Z">
+<meta property="og:updated_time" content="2019-09-08T13:46:39.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode_881_子域名访问计数">
-<meta name="twitter:description" content="这次的题目还是用的哈希表，边做题边练习python  主要用到的方法：  split()切割字符串  join()指定字符连接序列中的元素生成新的字符串 1234str = &amp;quot;-&amp;quot;;seq = (&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;)print str.join( seq )结果：a-b-c  format()格式化字符串 1">
+<meta name="twitter:title" content="LeetCode_583_两个字符串的删除操作">
+<meta name="twitter:description" content="描述 给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。  示例 1: 输入: “sea”, “eat”输出: 2解释: 第一步将”sea”变为”ea”，第二步将”eat”变为”ea”   思路：dp数组存的是两个字符串有最大相同子串的字符个数，如果有字符相同，dp就加1，没有则比较上一步的最大值，结果值用两">
   
     <link rel="alternative" href="/atom.xml" title="且听风吟" type="application/atom+xml">
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode-881" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode-583" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode_881_子域名访问计数
+      LeetCode_583_两个字符串的删除操作
     </h1>
   
 
         
-        <a href="/2019/08/26/LeetCode-881/" class="archive-article-date">
-  	<time datetime="2019-08-26T12:03:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+        <a href="/2019/09/08/LeetCode-583/" class="archive-article-date">
+  	<time datetime="2019-09-08T13:03:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
 </a>
         
 
@@ -173,28 +173,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>这次的题目还是用的哈希表，边做题边练习python</p>
-</li>
-<li><p>主要用到的方法：</p>
-<ol>
-<li><p>split()切割字符串</p>
-</li>
-<li><p>join()指定字符连接序列中的元素生成新的字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;-&quot;;</span><br><span class="line">seq = (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</span><br><span class="line">print str.join( seq )</span><br><span class="line">结果：a-b-c</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>format()格式化字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)    # 不设置指定位置，按默认顺序</span><br><span class="line">&apos;hello world&apos;</span><br><span class="line"></span><br><span class="line">&quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)  # 设置指定位置</span><br><span class="line">&apos;world hello world&apos;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
+        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><ul>
+<li>给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。</li>
 </ul>
-<a id="more"></a>    
+<h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1:"></a>示例 1:</h2><blockquote>
+<p>输入: “sea”, “eat”<br>输出: 2<br>解释: 第一步将”sea”变为”ea”，第二步将”eat”变为”ea”</p>
+</blockquote>
 <ul>
-<li>题目的代码如下，主要还是字符串的分割和拼接</li>
+<li>思路：dp数组存的是两个字符串有最大相同子串的字符个数，如果有字符相同，dp就加1，没有则比较上一步的最大值，结果值用两个字符串的字符总数减2倍的最大子串中字符个数，就是最少的操作步骤。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">class Solution(object):</span><br><span class="line">    def subdomainVisits(self, cpdomains):</span><br><span class="line">        dic = defaultdict(int)</span><br><span class="line">        for domain in cpdomains:</span><br><span class="line">            count,names = domain.split()</span><br><span class="line">            count = int(count)</span><br><span class="line">            list_names = names.split(&apos;.&apos;)</span><br><span class="line">            for i in range(len(list_names)):</span><br><span class="line">                dic[&apos;.&apos;.join(list_names[i:])] += count</span><br><span class="line">        return [&quot;&#123;&#125; &#123;&#125;&quot;.format(ct ,name) for name,ct in dic.items()]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int minDistance(String word1, String word2) &#123;</span><br><span class="line">        int m = word1.length();</span><br><span class="line">        int n = word2.length();</span><br><span class="line">        int[][] dp = new int[m+1][n+1];</span><br><span class="line">        for(int i = 1;i&lt;=m;i++)&#123;</span><br><span class="line">            for(int j = 1;j&lt;=n;j++)&#123;</span><br><span class="line">                if(word1.charAt(i-1) == word2.charAt(j-1))&#123;</span><br><span class="line">                    dp[i][j] = dp[i-1][j-1] + 1;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return m+n-2*dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<ul>
+<li>刚看到这个题的时候，就是按照题目的意思，思考怎么删除字符串的其他字符，实现两个字符串相同，怎么用动态规划的方法解决呢？实在是没有思路，觉得可以用队列或者指针解决，但是有多个相同子串怎么办，还需要比较子串的大小，麻烦，而且还是用到动态规划的思想比较简单，因为这道题我就是奔着动态规划去的，没想出办法看了答案，就是求最大子串，用所有的字母减掉最大子串的二倍就是删除的最少次数了，自己的思路还是不灵活，过几天还是做动态规划的题，好好练练。</li>
+</ul>
+
       
 
       
@@ -231,6 +225,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
         		</li>
       		
 		</ul>
@@ -286,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/26/LeetCode-881/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/08/LeetCode-583/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +298,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/28/LeetCode395/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode_395_至少有k个重复字符的最长子串
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/25/LeetCode-771-宝石和石头/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode_771_宝石和石头</div>
+    <a href="/2019/09/07/LintCode-395/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LintCode_395_硬币排成线2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -339,7 +328,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="LeetCode-881" data-title="LeetCode_881_子域名访问计数" data-url="http://yoursite.com/2019/08/26/LeetCode-881/"></div>
+	<div class="ds-thread" data-thread-key="LeetCode-583" data-title="LeetCode_583_两个字符串的删除操作" data-url="http://yoursite.com/2019/09/08/LeetCode-583/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
